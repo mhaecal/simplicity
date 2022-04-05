@@ -1,6 +1,6 @@
 import React, { MouseEvent } from 'react'
 import * as Icon from 'react-feather'
-import type { MenuList } from './layouts/@types/MainLayout'
+import type { MenuList } from './@types/MainLayout'
 
 type SidebarProps = {
   menu: MenuList

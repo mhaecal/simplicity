@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import * as Icon from 'react-feather'
 import TheSidebar from './TheSidebar'
-import type { MenuList, ProfileMenuList } from './layouts/@types/MainLayout'
+import type { MenuList, ProfileMenuList } from './@types/MainLayout'
 
 type Props = {
   menu: MenuList

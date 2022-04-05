@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import TheNavigation from '../TheNavigation'
-import type { MenuList, ProfileMenuList } from './@types/MainLayout'
+import type { MenuList, ProfileMenuList } from '../@types/MainLayout'
 
 const menu: MenuList = [
   { name: 'Dashboard', icon: 'home', path: '/dashboard' },
@@ -31,7 +31,9 @@ function MainLayout() {
         profileImg="https://placekitten.com/100/100"
         profileMenu={profileMenu}
       />
-      <Outlet />
+      <div className="duration-300 mt-20 px-4 lg:px-8 lg:transform lg:ml-60">
+        <Outlet />
+      </div>
     </>
   )
 }
