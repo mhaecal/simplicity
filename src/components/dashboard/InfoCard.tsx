@@ -1,5 +1,4 @@
-import React, { ReactElement, useEffect, useState } from 'react'
-import * as Icon from 'react-feather'
+import React, { ReactElement } from 'react'
 
 type InfoCardProps = {
   title: string
