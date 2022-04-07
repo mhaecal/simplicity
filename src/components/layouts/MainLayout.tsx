@@ -4,14 +4,13 @@ import TheNavigation from '../TheNavigation'
 import type { MenuList, ProfileMenuList } from '../@types/MainLayout'
 
 const menu: MenuList = [
-  { name: 'Dashboard', icon: 'home', path: '/dashboard' },
+  { name: 'Dashboard', icon: 'home', path: '/' },
   {
-    name: 'Dropdown',
+    name: 'Components',
     icon: 'stack',
     dropdown: [
-      { name: 'Dropdown 1', path: '/dropdown-1' },
+      { name: 'Button', path: '/components/button' },
       { name: 'Dropdown 2', path: '/dropdown-2' },
-      { name: 'Dropdown 3', path: '/dropdown-3' },
     ],
   },
 ]
