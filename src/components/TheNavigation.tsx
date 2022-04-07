@@ -1,17 +1,18 @@
-import React, { useState } from 'react'
+import React, { ReactElement, useState } from 'react'
 import * as Icon from 'react-feather'
 import TheSidebar from './TheSidebar'
 import type { MenuList, ProfileMenuList } from './@types/MainLayout'
 
 type Props = {
-  menu: MenuList
+  children: ReactElement
   title: string
+  menu: MenuList
   profileName: string
   profileImg: string
   profileMenu: ProfileMenuList
 }
 
-function TheNavigation({ title, menu, profileName, profileImg, profileMenu }: Props) {
+function TheNavigation({ children, title, menu, profileName, profileImg, profileMenu }: Props) {
   const [sidebarIsOpen, setSidebarIsOpen] = useState<boolean>(false)
 
   return (
@@ -67,6 +68,15 @@ function TheNavigation({ title, menu, profileName, profileImg, profileMenu }: Pr
           className="bg-gray-400 w-screen md:w-0 fixed h-screen md:h-0 z-30 top-0 bg-opacity-50 transform duration-300"
         ></div>
       )}
+      <div
+        className={
+          !sidebarIsOpen
+            ? 'duration-300 mt-20 px-4 lg:px-8 lg:transform lg:ml-60'
+            : 'duration-300 mt-20 px-4 lg:px-8 lg:transform lg:ml-20'
+        }
+      >
+        {children}
+      </div>
     </>
   )
 }
