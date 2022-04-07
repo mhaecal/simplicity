@@ -23,17 +23,15 @@ const profileMenu: ProfileMenuList = [
 
 function MainLayout() {
   return (
-    <>
-      <TheNavigation
-        title="Simplicity"
-        menu={menu}
-        profileName="Muhaecal"
-        profileImg="https://placekitten.com/100/100"
-        profileMenu={profileMenu}
-      >
-        <Outlet />
-      </TheNavigation>
-    </>
+    <TheNavigation
+      title="Simplicity"
+      menu={menu}
+      profileName="Muhaecal"
+      profileImg="https://placekitten.com/100/100"
+      profileMenu={profileMenu}
+    >
+      <Outlet />
+    </TheNavigation>
   )
 }
 

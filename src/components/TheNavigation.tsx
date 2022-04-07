@@ -8,8 +8,8 @@ type Props = {
   title: string
   menu: MenuList
   profileName: string
-  profileImg: string
-  profileMenu: ProfileMenuList
+  profileImg?: string
+  profileMenu?: ProfileMenuList
 }
 
 function TheNavigation({ children, title, menu, profileName, profileImg, profileMenu }: Props) {
@@ -58,7 +58,7 @@ function TheNavigation({ children, title, menu, profileName, profileImg, profile
               <li className="py-2 px-4 hover:bg-gray-100 bg-gray-100 text-gray-500 font-semibold">
                 Account
               </li>
-              {profileMenu.map((menu, index) => (
+              {profileMenu?.map((menu, index) => (
                 <li key={index} className="py-2 px-4 hover:bg-gray-100">
                   <a href="#" className="flex items-center space-x-1">
                     <span>{menu.name}</span>
