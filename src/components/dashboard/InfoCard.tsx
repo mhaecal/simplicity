@@ -1,10 +1,13 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, cloneElement } from 'react'
+import classNames from 'classnames'
+import useBgAndTextClass from '../../hooks/useBgAndTextClass'
+import { TailwindColor } from '../@types/TailwindColor'
 
 type InfoCardProps = {
   title: string
   value: string | number
   icon: ReactElement
-  color: string
+  color: TailwindColor
 }
 
 function InfoCard({ title, value, icon, color }: InfoCardProps) {
@@ -16,9 +19,12 @@ function InfoCard({ title, value, icon, color }: InfoCardProps) {
           <span className="text-xs text-gray-400 uppercase">{title}</span>
         </div>
         <div
-          className={`bg-${color}-500 text-${color}-500 bg-opacity-10 rounded-full w-10 h-10 flex items-center justify-center`}
+          className={classNames(
+            'bg-opacity-10 rounded-full w-10 h-10 flex items-center justify-center',
+            useBgAndTextClass(color)
+          )}
         >
-          {icon}
+          {cloneElement(icon, { size: 20 })}
         </div>
       </div>
     </div>
