@@ -8,11 +8,12 @@ type InfoCardProps = {
   value: string | number
   icon: ReactElement
   color: TailwindColor
+  className?: string
 }
 
-function InfoCard({ title, value, icon, color }: InfoCardProps) {
+function InfoCard({ title, value, icon, color, className }: InfoCardProps) {
   return (
-    <div className="bg-white rounded">
+    <div className={classNames('bg-white rounded', className)}>
       <div className="flex items-center justify-between px-4 py-3">
         <div className="leading-none">
           <p className="font-semibold text-lg lg:text-2xl">{value}</p>
