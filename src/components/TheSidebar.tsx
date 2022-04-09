@@ -41,24 +41,34 @@ function TheSidebar({ menu, sidebarIsOpen }: SidebarProps) {
         {menu.map((menuItem, index) => (
           <li key={index} className={menuItem.dropdown && 'relative'}>
             {/*DEFAULT NAV*/}
-            {!menuItem.dropdown && menuItem.path && (
-              <NavLink to={menuItem.path} className="nav-link nav-link-active">
-                <Home />
+            {!menuItem.dropdown && menuItem.path && !menuItem.externalUri && (
+              <NavLink to={menuItem.path} className="nav-link">
+                {menuItem.icon}
                 <span className={className.menuName}>{menuItem.name}</span>
               </NavLink>
+            )}
+            {!menuItem.dropdown && menuItem.externalUri && (
+              <a href={menuItem.path} className="nav-link">
+                {menuItem.icon}
+                <span className={className.menuName}>{menuItem.name}</span>
+              </a>
             )}
             {/*DROPDOWN NAV*/}
             {menuItem.dropdown && (
               <React.Fragment>
                 <button onClick={(e) => toggleDropdown(e)} className="nav-link pr-7">
-                  <Home />
+                  {menuItem.icon}
                   <span className={className.menuName}>{menuItem.name}</span>
                   <ChevronRight className={className.dropdownArrow} />
                 </button>
                 <ul className={className.dropdownItems}>
                   {menuItem.dropdown.map((dropdown, index) => (
                     <li key={index}>
-                      <NavLink to={dropdown.path}>{dropdown.name}</NavLink>
+                      {dropdown.externalUri ? (
+                        <a href={dropdown.path}>{dropdown.name}</a>
+                      ) : (
+                        <NavLink to={dropdown.path}>{dropdown.name}</NavLink>
+                      )}
                     </li>
                   ))}
                 </ul>

@@ -1,10 +1,14 @@
+import { ReactElement } from 'react'
+
 export type MenuList = {
   name: string
-  icon: string
+  icon: ReactElement
   path?: string
+  externalUri?: boolean
   dropdown?: {
     name: string
     path: string
+    externalUri?: boolean
   }[]
 }[]
 

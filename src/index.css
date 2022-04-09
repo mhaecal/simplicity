@@ -10,19 +10,22 @@
 
 @layer components {
   .nav-link {
-    @apply w-full flex items-center text-left space-x-3 py-2 px-3 text-gray-200 hover:text-gray-300 rounded-lg mb-2;
+    @apply w-full flex items-center text-left space-x-3 p-3 text-gray-200 hover:text-gray-300 rounded-lg mb-2;
   }
   .nav-link > svg {
     @apply w-5 h-5 flex-shrink-0;
   }
-  .nav-link-active {
+  .nav-link.active {
     @apply bg-gray-700;
   }
   .sidebar {
     @apply transform w-0 bg-gray-800 origin-left duration-300 h-screen fixed top-0 left-0 z-40 pt-20 overflow-x-hidden;
   }
   .dropdown-items {
-    @apply transform duration-500 max-h-0 overflow-y-hidden ml-11 -mt-1 leading-loose text-gray-400;
+    @apply transform duration-500 max-h-0 overflow-y-hidden ml-11 -mt-1 mb-1 text-[15px] leading-loose text-gray-400;
+  }
+  .dropdown-items > li {
+    @apply pb-1;
   }
   .table-responsive {
     @apply border-collapse table-auto w-full;
