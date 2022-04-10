@@ -27,6 +27,17 @@
   .dropdown-items > li {
     @apply pb-1;
   }
+  .breadcrumb-list > ul > li {
+    @apply text-gray-500;
+  }
+  .breadcrumb-item.active {
+    @apply text-gray-700;
+  }
+  .breadcrumb-item::before {
+    content: '/';
+    display: inline-block;
+    padding-right: 10px;
+  }
   .table-responsive {
     @apply border-collapse table-auto w-full;
   }
