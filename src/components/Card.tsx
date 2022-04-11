@@ -1,15 +1,16 @@
-import React, { ReactElement } from 'react'
-import classNames from 'classnames'
+import React, { ReactNode } from 'react'
 
 type CardProps = {
-  children: ReactElement | string
+  children: ReactNode
   className?: string
+  title?: string
 }
 
-function Card({ children, className }: CardProps) {
+function Card({ children, className, title }: CardProps) {
   return (
-    <div className={classNames('bg-white lg:p-4 rounded', className, { 'p-3': !className })}>
-      {children}
+    <div className="bg-white p-3 lg:p-4 rounded">
+      {title && <h1 className="font-bold">{title}</h1>}
+      <div className={className}>{children}</div>
     </div>
   )
 }
