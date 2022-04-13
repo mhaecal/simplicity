@@ -15,7 +15,7 @@ function Form() {
       <Card className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-7 items-end">
         <Box>
           <Label title="Label" />
-          <Input type="password" placeholder="Input text with label" />
+          <Input type="password" placeholder="Input text with label" className="bg-red-500" />
         </Box>
         <Box>
           <SelectInput>

@@ -6,6 +6,8 @@ import BlankLayout from '../components/layouts/BlankLayout'
 // pages
 import Dashboard from '../pages/Dashboard'
 import ButtonPage from '../pages/components/ButtonPage'
+import Login from '../pages/Login'
+import Form from '../pages/Form'
 
 function Router() {
   return (
@@ -14,10 +16,10 @@ function Router() {
         <Routes>
           <Route element={<MainLayout />}>
             <Route path="/" element={<Dashboard />} />
-            <Route path="/components/button" element={<ButtonPage />} />
+            <Route path="/form" element={<Form />} />
           </Route>
           <Route element={<BlankLayout />}>
-            <Route path="/login" element={<Dashboard />} />
+            <Route path="/login" element={<Login />} />
           </Route>
         </Routes>
       </BrowserRouter>

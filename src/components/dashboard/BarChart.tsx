@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Chart from 'react-apexcharts'
-import Box from '../Box'
 import Card from '../Card'
 
 function BarChart() {
@@ -30,11 +29,9 @@ function BarChart() {
   })
 
   return (
-    <Box className="grid md:grid-cols-2 md:gap-2 lg:gap-10">
-      <Card title="Visitor">
-        <Chart options={data.options} series={data.series} type="bar" width="100%" />
-      </Card>
-    </Box>
+    <Card title="Visitor">
+      <Chart options={data.options} series={data.series} type="bar" width="100%" />
+    </Card>
   )
 }
 
