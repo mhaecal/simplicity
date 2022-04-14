@@ -1,16 +1,14 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 type ButtonProps = {
-  onClick: () => any
+  children: ReactNode
+  className?: string
+  onClick?: () => any
 }
 
-function Button({ onClick }: ButtonProps) {
+function Button({ children, className, onClick }: ButtonProps) {
   return (
-    <div>
-      <button onClick={onClick} className="p-4 border bg-white">
-        coba
-      </button>
-    </div>
+    <button className={'btn focus:shadow-outline hover:bg-gray-50 ' + className}>{children}</button>
   )
 }
 

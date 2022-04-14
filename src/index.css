@@ -47,4 +47,7 @@
   .table-responsive > tbody > tr > td {
     @apply border-t text-gray-700 px-6 py-3;
   }
+  .btn {
+    @apply py-2 px-5 text-gray-600 font-bold transition-colors duration-150 bg-white border border-gray-400 rounded;
+  }
 }

@@ -6,14 +6,7 @@ function ButtonPage() {
     console.log('safas')
   }
 
-  return (
-    <div>
-      {/*
-        
-      */}
-      <Button onClick={() => coba()} />
-    </div>
-  )
+  return <div>coba</div>
 }
 
 export default ButtonPage
