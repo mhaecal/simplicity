@@ -8,6 +8,7 @@ import Dashboard from '../pages/Dashboard'
 import ButtonPage from '../pages/components/ButtonPage'
 import Login from '../pages/Login'
 import Form from '../pages/Form'
+import Register from '../pages/Register'
 
 function Router() {
   return (
@@ -20,6 +21,7 @@ function Router() {
           </Route>
           <Route element={<BlankLayout />}>
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
           </Route>
         </Routes>
       </BrowserRouter>
