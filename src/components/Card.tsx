@@ -9,7 +9,7 @@ type CardProps = {
 function Card({ children, className, title }: CardProps) {
   return (
     <div className="bg-white p-3 lg:p-4 rounded">
-      {title && <h1 className="font-bold">{title}</h1>}
+      {title && <h1 className="font-bold mb-2">{title}</h1>}
       <div className={className}>{children}</div>
     </div>
   )

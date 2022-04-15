@@ -8,7 +8,9 @@ type ButtonProps = {
 
 function Button({ children, className, onClick }: ButtonProps) {
   return (
-    <button className={'btn focus:shadow-outline hover:bg-gray-50 ' + className}>{children}</button>
+    <button onClick={onClick} className={'btn focus:shadow-outline hover:bg-gray-50 ' + className}>
+      {children}
+    </button>
   )
 }
 

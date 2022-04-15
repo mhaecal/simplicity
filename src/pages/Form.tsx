@@ -49,7 +49,7 @@ function Form() {
             <RadioItem label="Default radio coba" value={2} disabled checked />
           </RadioGroup>
         </Box>
-        <Button className="w-full">Default button</Button>
+        <Button onClick={() => console.log('anu')}>Default button</Button>
         {/*
         title
         select category
