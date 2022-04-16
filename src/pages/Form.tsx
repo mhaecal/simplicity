@@ -10,17 +10,19 @@ import SelectOption from '../components/SelectOption'
 import Button from '../components/Button'
 import RadioGroup from '../components/RadioGroup'
 import RadioItem from '../components/RadioItem'
+import Checkbox from '../components/Checkbox'
 
 function Form() {
   return (
     <>
       <Breadcrumb data={['Home', 'Form']} />
-      <Card className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-7 items-end">
+      <Card className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-7">
         <Box>
-          <Label title="Input with label" />
+          <Label title="Username" />
           <Input placeholder="Username" />
         </Box>
         <Box>
+          <Label title="Password" />
           <Input type="password" placeholder="Password" />
         </Box>
         <Box>
@@ -32,32 +34,20 @@ function Form() {
           </SelectInput>
         </Box>
         <Box>
-          <Label title="Simple select input" />
-          <SelectInput>
-            <SelectOption value={1}>One</SelectOption>
-            <SelectOption value="Two">Two</SelectOption>
-            <SelectOption>Three</SelectOption>
-          </SelectInput>
+          <Label title="Error input" />
+          <Input error="Example error message" />
         </Box>
-        <Box className="md:col-span-2 self-center grid md:grid-cols-4 gap-1">
-          <RadioGroup name="radio1" className="md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-1">
-            <RadioItem label="Default radio" value="" />
-            <RadioItem label="Default radio coba" value={2} checked />
-            <RadioItem label="Default radio coba" value={2} disabled />
-          </RadioGroup>
-          <RadioGroup name="radio2" className="md:col-span-1">
-            <RadioItem label="Default radio coba" value={2} disabled checked />
-          </RadioGroup>
+        <RadioGroup name="radioExample" className="flex flex-col md:flex-row justify-evenly">
+          <RadioItem label="Default radio" value="" />
+          <RadioItem label="Disabled checked radio" value="disabled" disabled checked />
+        </RadioGroup>
+        <Box>
+          <Checkbox label="Simple checkbox input" />
         </Box>
-        <Button onClick={() => console.log('anu')}>Default button</Button>
-        {/*
-        title
-        select category
-        multiple select tag
-        radio
-        checkbox
-        ckeditor
-      */}
+        <Button>Default button</Button>
+        <Button className="bg-blue-500 border-blue-500 text-white hover:bg-blue-600">
+          Custom Button
+        </Button>
       </Card>
     </>
   )

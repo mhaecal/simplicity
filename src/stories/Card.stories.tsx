@@ -12,16 +12,18 @@ export default {
   },
   argTypes: {
     children: {
-      description: '`ReactNode` | `string`',
+      description: '`ReactNode` `string`',
     },
   },
 } as ComponentMeta<typeof Card>
 
-const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />
+const Template: ComponentStory<typeof Card> = (args) => (
+  <Card {...args}>
+    <p>Lorem ipsum dolor sit amet.</p>
+  </Card>
+)
 
 export const Base = Template.bind({})
 Base.args = {
   title: 'This is Title',
-  children: <p>Lorem ipsum dolor sit amet.</p>,
-  className: '',
 }
