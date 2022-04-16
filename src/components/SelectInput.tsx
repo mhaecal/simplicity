@@ -4,11 +4,12 @@ import { ChevronDown } from 'react-feather'
 type SelectInputProps = {
   children: ReactNode
   onChange?: () => any
+  className?: string
 }
 
-function SelectInput({ children, onChange }: SelectInputProps) {
+function SelectInput({ children, onChange, className }: SelectInputProps) {
   return (
-    <div className="relative inline-block w-full">
+    <div className={'relative inline-block w-full ' + className}>
       <select
         className="w-full h-10 pl-3 pr-6 bg-white border border-gray-300 rounded appearance-none focus:ring focus:ring-blue-300  focus:shadow-outline"
         placeholder="Regular input"
