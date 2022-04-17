@@ -5,9 +5,9 @@ import MainLayout from '../components/layouts/MainLayout'
 import BlankLayout from '../components/layouts/BlankLayout'
 // pages
 import Dashboard from '../pages/Dashboard'
-import ButtonPage from '../pages/components/ButtonPage'
 import Login from '../pages/Login'
 import Form from '../pages/Form'
+import Table from '../pages/Table'
 
 function Router() {
   return (
@@ -17,6 +17,7 @@ function Router() {
           <Route element={<MainLayout />}>
             <Route path="/" element={<Dashboard />} />
             <Route path="/form" element={<Form />} />
+            <Route path="/table" element={<Table />} />
           </Route>
           <Route element={<BlankLayout />}>
             <Route path="/login" element={<Login />} />
