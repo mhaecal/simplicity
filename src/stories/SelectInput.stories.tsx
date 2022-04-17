@@ -12,7 +12,7 @@ export default {
 export const Base: ComponentStory<typeof SelectInput> = (args) => (
   <SelectInput {...args}>
     <SelectOption>One</SelectOption>
-    <SelectOption selected>Two</SelectOption>
+    <SelectOption>Two</SelectOption>
     <SelectOption disabled>Three</SelectOption>
   </SelectInput>
 )

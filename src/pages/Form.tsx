@@ -27,7 +27,7 @@ function Form() {
         </Box>
         <Box>
           <Label title="Simple select input" />
-          <SelectInput>
+          <SelectInput defaultValue="Three">
             <SelectOption value={1}>One</SelectOption>
             <SelectOption value="Two">Two</SelectOption>
             <SelectOption>Three</SelectOption>
