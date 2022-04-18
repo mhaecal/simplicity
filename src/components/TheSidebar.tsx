@@ -2,10 +2,10 @@ import React, { MouseEvent } from 'react'
 import { NavLink } from 'react-router-dom'
 import classNames from 'classnames'
 import { ChevronRight, Home } from 'react-feather'
-import type { MenuList } from './@types/MainLayout'
+import type { SidebarMenuList } from '../types/Menu'
 
 type SidebarProps = {
-  menu: MenuList
+  menu: SidebarMenuList
   sidebarIsOpen: boolean
 }
 

@@ -1,12 +1,13 @@
-import React, { MouseEvent, ReactElement, useState } from 'react'
+import React, { MouseEvent, ReactElement, cloneElement, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import * as Icon from 'react-feather'
 import TheSidebar from './TheSidebar'
-import type { MenuList, ProfileMenuList } from './@types/MainLayout'
+import type { ProfileMenuList, SidebarMenuList } from '../types/Menu'
 
 type Props = {
   children: ReactElement
   title: string
-  menu: MenuList
+  menu: SidebarMenuList
   profileName: string
   profileImg?: string
   profileMenu?: ProfileMenuList
@@ -59,10 +60,14 @@ function TheNavigation({ children, title, menu, profileName, profileImg, profile
                 Account
               </li>
               {profileMenu?.map((menu, index) => (
-                <li key={index} className="py-2 px-4 hover:bg-gray-100">
-                  <a href="#" className="flex items-center space-x-1">
+                <li key={index}>
+                  <NavLink
+                    to={menu.path}
+                    className="flex items-center space-x-1 py-2 px-4 hover:bg-gray-100"
+                  >
+                    {cloneElement(menu.icon, { size: 16 })}
                     <span>{menu.name}</span>
-                  </a>
+                  </NavLink>
                 </li>
               ))}
               <li className="py-2 px-4 hover:bg-gray-100 border-t">Logout</li>
