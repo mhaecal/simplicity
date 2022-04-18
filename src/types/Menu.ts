@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 
-export type MenuList = {
+export type SidebarMenuList = {
   name: string
   icon: ReactElement
   path?: string
@@ -14,6 +14,6 @@ export type MenuList = {
 
 export type ProfileMenuList = {
   name: string
-  icon: string
+  icon: ReactElement
   path: string
 }[]
