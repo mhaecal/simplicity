@@ -1,25 +1,43 @@
-import React, { MouseEvent, ReactElement, cloneElement, useState } from 'react'
+import React, { ReactElement, cloneElement, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import * as Icon from 'react-feather'
 import TheSidebar from './TheSidebar'
 import type { ProfileMenuList, SidebarMenuList } from '../types/Menu'
 
-type Props = {
+type NavigationProps = {
   children: ReactElement
   title: string
   menu: SidebarMenuList
   profileName: string
   profileImg?: string
   profileMenu?: ProfileMenuList
+  onLogout?: () => any
 }
 
-function TheNavigation({ children, title, menu, profileName, profileImg, profileMenu }: Props) {
+function TheNavigation({
+  children,
+  title,
+  menu,
+  profileName,
+  profileImg,
+  profileMenu,
+  onLogout,
+}: NavigationProps) {
   const [sidebarIsOpen, setSidebarIsOpen] = useState<boolean>(false)
 
-  const toggleProfilePopup = (e: MouseEvent) => {
-    const profilePopup = e.currentTarget.nextElementSibling
-    profilePopup?.classList.toggle('hidden')
-  }
+  useEffect(() => {
+    document.addEventListener('click', (e) => {
+      const profilePopup = document.getElementById('profilePopup')
+      const target = e.target as HTMLElement
+      if (target.parentElement === document.getElementById('profileButton')) {
+        profilePopup?.classList.toggle('hidden')
+      } else {
+        if (!profilePopup?.classList.contains('hidden')) {
+          profilePopup?.classList.add('hidden')
+        }
+      }
+    })
+  })
 
   return (
     <>
@@ -44,17 +62,22 @@ function TheNavigation({ children, title, menu, profileName, profileImg, profile
         >
           {title}
         </a>
-        <button className="order-last relative lg:absolute lg:right-5 focus:outline-none">
+        <button
+          className="order-last relative lg:absolute lg:right-5 focus:outline-none"
+          id="profileButton"
+        >
           <span className="hidden lg:inline-block pr-2 font-semibold text-sm text-gray-600">
             {profileName}
           </span>
           <img
-            onClick={(e) => toggleProfilePopup(e)}
             src={profileImg}
             alt={profileName}
             className="w-9 h-9 rounded-full border inline-block"
           />
-          <div className="hidden bg-white absolute right-0 border text-left w-52 text-sm rounded-lg transform translate-y-2">
+          <div
+            id="profilePopup"
+            className="hidden bg-white absolute right-0 border text-left w-52 text-sm rounded-lg transform translate-y-2"
+          >
             <ul>
               <li className="py-2 px-4 hover:bg-gray-100 bg-gray-100 text-gray-500 font-semibold">
                 Account
@@ -70,7 +93,9 @@ function TheNavigation({ children, title, menu, profileName, profileImg, profile
                   </NavLink>
                 </li>
               ))}
-              <li className="py-2 px-4 hover:bg-gray-100 border-t">Logout</li>
+              <li className="py-2 px-4 hover:bg-gray-100 border-t" onClick={onLogout}>
+                Logout
+              </li>
             </ul>
           </div>
         </button>

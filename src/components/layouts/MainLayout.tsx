@@ -4,6 +4,11 @@ import TheNavigation from '../TheNavigation'
 import { profileMenu, sidebarMenu } from '../../_data/menu'
 
 function MainLayout() {
+  const handleLogout = () => {
+    // method to handle logout
+    console.log('handle logout')
+  }
+
   return (
     <TheNavigation
       title="Simplicity"
@@ -11,6 +16,7 @@ function MainLayout() {
       profileName="Muhaecal"
       profileImg="https://placekitten.com/100/100"
       profileMenu={profileMenu}
+      onLogout={() => handleLogout()}
     >
       <Outlet />
     </TheNavigation>
