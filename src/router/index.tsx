@@ -7,7 +7,7 @@ import BlankLayout from '../components/layouts/BlankLayout'
 import Dashboard from '../pages/Dashboard'
 import Login from '../pages/Login'
 import Form from '../pages/Form'
-import Table from '../pages/Table'
+import TablePage from '../pages/TablePage'
 
 function Router() {
   return (
@@ -17,7 +17,7 @@ function Router() {
           <Route element={<MainLayout />}>
             <Route path="/" element={<Dashboard />} />
             <Route path="/form" element={<Form />} />
-            <Route path="/table" element={<Table />} />
+            <Route path="/table" element={<TablePage />} />
           </Route>
           <Route element={<BlankLayout />}>
             <Route path="/login" element={<Login />} />
