@@ -1,7 +1,7 @@
 import React, { ReactElement, cloneElement } from 'react'
 import classNames from 'classnames'
-import useBgAndTextClass from '../../hooks/useBgAndTextClass'
-import { TailwindColor } from '../../types/TailwindColor'
+import useBgAndTextClass from '../hooks/useBgAndTextClass'
+import type { TailwindColor } from '../types/TailwindColor'
 
 type InfoCardProps = {
   title: string
