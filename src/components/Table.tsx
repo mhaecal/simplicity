@@ -1,5 +1,4 @@
-import React, { MutableRefObject, useEffect, useRef } from 'react'
-import Box from '../components/Box'
+import React, { useEffect, useRef } from 'react'
 import { Grid } from 'gridjs'
 import 'gridjs/dist/theme/mermaid.css'
 

@@ -33,12 +33,11 @@ function TheNavigation({
         profilePopup?.classList.toggle('hidden')
       } else {
         if (!profilePopup?.classList.contains('hidden')) {
-          console.log('hidden profile')
           profilePopup?.classList.add('hidden')
         }
       }
     })
-  }, ['sidebarIsOpen'])
+  }, [])
 
   return (
     <>
